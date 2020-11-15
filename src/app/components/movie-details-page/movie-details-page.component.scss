@@ -1,0 +1,70 @@
+@import "src/styles";
+
+.movie-details-page-title {
+  margin: 40px auto 0;
+  text-align: center;
+  width: 50vw;
+
+  h2 {
+    padding: 0 1em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: lighter;
+  }
+}
+
+.movie-finder-page-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  img {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  div {
+    margin: 20px 0 0;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.movie-finder-page-description {
+  margin: 50px auto;
+  text-align: center;
+  width: 80vw;
+  font-size: 1.2em;
+  font-weight: lighter;
+}
+
+.movie-finder-page-back-button-container {
+  button {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    border-radius: 25px;
+    border: none;
+    background: $mainColor1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    outline: none;
+
+    img {
+      height: 25px;
+      width: 40px;
+    }
+  }
+
+  button:active {
+    background: #007e91;
+  }
+}

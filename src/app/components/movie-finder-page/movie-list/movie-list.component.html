@@ -1,0 +1,22 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Genre</th>
+    <th>Date</th>
+    <th>Rating</th>
+  </tr>
+  <tr *ngFor="let movie of filteredMovieList"
+      class="movie-data-row"
+      (click)="handleMovieRowClick(movie)">
+    <td>{{movie.show.name}}</td>
+    <td class="genre">{{movie.show.genres}}</td>
+    <td>{{movie.show.premiered | date:'dd.MM.yyyy'}}</td>
+    <td class="rating"
+        [style.background]="getColor(movie.show.rating.average)">
+      {{movie.show.rating.average}}</td>
+  </tr>
+  <tr *ngIf="!filteredMovieList || !filteredMovieList.length">
+    <td>No matching series found.</td>
+  </tr>
+</table>
+

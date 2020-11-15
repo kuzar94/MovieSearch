@@ -1,0 +1,19 @@
+<div class="movie-details-page-title">
+  <h2>{{movieData.show.name}}</h2>
+</div>
+<div class="movie-finder-page-details">
+  <img src="{{movieData.show.image.original}}">
+  <div *ngIf="movieData.show.rating.average"
+       [style.background]="ratingColor">
+    {{movieData.show.rating.average}}
+  </div>
+</div>
+<div class="movie-finder-page-description">
+  {{movieData.show.summary}}
+</div>
+<div class="movie-finder-page-back-button-container">
+  <button (click)="handleBackButtonClick()">
+    <img alt="bin"
+         src="../../../assets/icons/next.svg">
+  </button>
+</div>

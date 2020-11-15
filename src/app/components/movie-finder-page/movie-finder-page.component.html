@@ -1,0 +1,44 @@
+<div class="movie-finder-page-title">
+  <h2>Movie search engine</h2>
+  <span class="mask"></span>
+</div>
+<div class="search-bar-container">
+  <input type="text"
+         placeholder="What movie are you looking for?"
+         (keyup.enter)="handleMovieSearch()"
+         [(ngModel)]="searchInputValue">
+  <button type="submit"
+          (click)="handleMovieSearch()">
+    <img alt="bin"
+         src="../../../assets/icons/search.svg">
+  </button>
+</div>
+<div class="movie-search-result-container">
+  <div class="movie-filter-container">
+    <form [formGroup]="countryForm">
+      <select (change)="handleSelectChange($event.target.value)"
+              formControlName="countryControl">
+        <option value="Any">Any</option>
+        <option value="Running">Running</option>
+        <option value="Ended">Ended</option>
+      </select>
+    </form>
+
+    <div *ngFor="let genre of currentGenres">
+      <input type="checkbox"
+             #checkboxes
+             (change)="handleCheckboxChange(genre)"
+             id="{{genre}}"
+             name="genre"
+             value="{{genre}}">
+      <label for="{{genre}}">
+        {{genre}}
+      </label>
+    </div>
+  </div>
+  <div class="movie-list-container">
+    <app-movie-list
+      [filteredMovieList]="filteredMovieList">
+    </app-movie-list>
+  </div>
+</div>
